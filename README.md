@@ -7,35 +7,35 @@ na przykład, wartość **12.34**.
 
 # 2. Cele projektu
 Student:
- oswoi się ze sposobem badania układów przed następnym projektem,
- zapozna się z metodami opracowywania zależności empirycznych i badania ich zgodności.
+- oswoi się ze sposobem badania układów przed następnym projektem,
+- zapozna się z metodami opracowywania zależności empirycznych i badania ich zgodności.
 
 # 3. Zakres
 Do rozwiązania problemów związanych z realizacją projektu można wykorzystać inżynierskie
 pakiety np.:
- Matlab,
- Octave,
- Python z biblioteką PyDOE2, numpy,
- środowisko R.
- własny program w dowolnym języku programowania.
+- Matlab,
+- Octave,
+- Python z biblioteką PyDOE2, numpy,
+- środowisko R.
+- własny program w dowolnym języku programowania.
 W trakcie realizacji pierwszego zadania projektowego należy zrealizować kroki opisane w
 poniższych podrozdziałach.
 
 ## 3.1. Badanie wstępne
 Zadaniem badań wstępnych jest pozyskanie ogólnej wiedzy na temat zachowania układu.
 Należy wyznaczyć następujące wielkości:
- wartość parametru wyjściowego na granicach przedziału,
- wartości ekstremów lokalnych (jeżeli istnieją),
- zakres zmian parametru wyjściowego w rozpatrywanym przedziale,
- parametry statystyczne (bez wykorzystania gotowych funkcji) dla wybranego punktu pomiarowego tj.:
-— wielkość próby (liczba powtórzeń dla jednego wybranego punktu pomiarowego co najmniej 25),
-— średnia,
-— mediana,
-— wariancja,
-— odchylenie standardowe,
-— minimum,
-— maksimum,
-— histogram.
+- wartość parametru wyjściowego na granicach przedziału,
+- wartości ekstremów lokalnych (jeżeli istnieją),
+- zakres zmian parametru wyjściowego w rozpatrywanym przedziale,
+- parametry statystyczne (bez wykorzystania gotowych funkcji) dla wybranego punktu pomiarowego tj.:
+- wielkość próby (liczba powtórzeń dla jednego wybranego punktu pomiarowego co najmniej 25),
+  - średnia,
+  - mediana,
+  - wariancja,
+  - odchylenie standardowe,
+  - minimum,
+  - maksimum,
+  - histogram.
 W badaniach wstępnych należy też przyjrzeć się charakterystyce układu w różnych skalach:
 liniowej i logarytmicznej. W ten sposób można wykryć podstawowe charakterystyczne zależności.
 ## 3.2. Eksperyment właściwy
@@ -48,11 +48,11 @@ każdym modelu wyznaczyć wartości współczynników najlepiej metodą najmniej
 we współrzędnych standaryzowanych. Należy podać otrzymane układy równań normalnych.
 3. Ocenić adekwatność przyjętych modeli. Zgodność modelu można ocenić wizualnie (wykres).
 Oprócz wizualnej oceny zgodności uzyskanych przebiegów należy wyznaczyć:
- współczynnik determinacji (R2
+- współczynnik determinacji (R2
 ),
- pierwiastek błędu średnio kwadratowego (RSME),
- średni oraz maksymalny błąd względny,
- średni oraz maksymalny błąd bezwzględny.
+- pierwiastek błędu średnio kwadratowego (RSME),
+- średni oraz maksymalny błąd względny,
+- średni oraz maksymalny błąd bezwzględny.
 4. Wybrać model najlepiej opisujący badany obiekt. Ocenić odchyłki dopasowania w badanym
 zakresie.
 ## 3.3. Wnioski
