@@ -28,7 +28,7 @@ Należy wyznaczyć następujące wielkości:
 - wartości ekstremów lokalnych (jeżeli istnieją),
 - zakres zmian parametru wyjściowego w rozpatrywanym przedziale,
 - parametry statystyczne (bez wykorzystania gotowych funkcji) dla wybranego punktu pomiarowego tj.:
-- wielkość próby (liczba powtórzeń dla jednego wybranego punktu pomiarowego co najmniej 25),
+  - wielkość próby (liczba powtórzeń dla jednego wybranego punktu pomiarowego co najmniej 25),
   - średnia,
   - mediana,
   - wariancja,
@@ -48,11 +48,10 @@ każdym modelu wyznaczyć wartości współczynników najlepiej metodą najmniej
 we współrzędnych standaryzowanych. Należy podać otrzymane układy równań normalnych.
 3. Ocenić adekwatność przyjętych modeli. Zgodność modelu można ocenić wizualnie (wykres).
 Oprócz wizualnej oceny zgodności uzyskanych przebiegów należy wyznaczyć:
-- współczynnik determinacji (R2
-),
-- pierwiastek błędu średnio kwadratowego (RSME),
-- średni oraz maksymalny błąd względny,
-- średni oraz maksymalny błąd bezwzględny.
+  - współczynnik determinacji (R2),
+  - pierwiastek błędu średnio kwadratowego (RSME),
+  - średni oraz maksymalny błąd względny,
+  - średni oraz maksymalny błąd bezwzględny.
 4. Wybrać model najlepiej opisujący badany obiekt. Ocenić odchyłki dopasowania w badanym
 zakresie.
 ## 3.3. Wnioski
