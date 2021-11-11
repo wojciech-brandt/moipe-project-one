@@ -25,4 +25,13 @@ def arr_sum(arr: np.ndarray):
 
 def arr_average(arr: np.ndarray): return arr_sum(arr)/arr.size
 
+def variance(arr: np.ndarray): 
+	av = arr_average(arr)
+	sum = 0
+	for i in arr:
+		sum = sum + (i - av)**2
+	
+	return ( (1/ (arr.size - 1) ) * sum )
 
+def standard_deviation(arr: np.ndarray): 
+	return np.sqrt(variance(arr))
