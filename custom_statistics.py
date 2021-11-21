@@ -35,3 +35,14 @@ def variance(arr: np.ndarray):
 
 def standard_deviation(arr: np.ndarray): 
 	return np.sqrt(variance(arr))
+
+def arr_median(arr: np.ndarray):
+	sorted_arr = np.sort(arr)
+	arr_size = arr.size
+
+	if (arr_size % 2) == 0:
+		return ( arr[ np.int8( np.floor(arr_size/2) ) ] + arr[ np.int8( np.ceil(arr_size/2) ) ]) / 2
+
+	else:
+		return arr[ np.int8( np.ceil(arr.size/2) ) ]
+

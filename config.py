@@ -7,7 +7,7 @@ preliminary = dict(
 main = dict(
 	FILE_NAME = "main.csv",
 	START_POINT = 1,
-	END_POINT = 460,
+	END_POINT = 360,
 	NO_POINTS = 20
 )
 
