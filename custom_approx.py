@@ -22,7 +22,6 @@ def polynomial_approximation(
 	-------
 	np.ndarray
 		A vector of values calculated based on the approximating function."""
-	assert (Xarr.size == Yarr.size), "Xarr and Yarr must be the same size."
 	
 	X_vec = np.zeros([Yarr.size, deg])
 
@@ -54,7 +53,6 @@ def natlog_approximation(
 	-------
 	np.ndarray
 		A vector of values calculated based on the approximating function."""
-	assert (Xarr.size == Yarr.size), "Xarr and Yarr must be the same size."
 
 	X_vec = np.zeros([Yarr.size, deg])
 
@@ -86,7 +84,6 @@ def rational_approximation(
 	-------
 	np.ndarray
 		A vector of values calculated based on the approximating function."""
-	assert (Xarr.size == Yarr.size), "Xarr and Yarr must be the same size."
 
 	X_vec = np.zeros([Yarr.size, deg])
 
@@ -100,7 +97,7 @@ def trig_approximation(
 	Xarr: np.ndarray,
 	Yarr: np.ndarray,
 	deg: np.int8,
-	constant: np.float16 = np.pi
+	constant = np.pi
 ) -> np.ndarray:
 	"""
 	Calculate a vector of values that approximate the corresponding 'Yarr' values
@@ -122,16 +119,84 @@ def trig_approximation(
 	-------
 	np.ndarray
 		A vector of values calculated based on the approximating function."""
-	assert (Xarr.size == Yarr.size), "Xarr and Yarr must be the same size."
 
 	X_vec = np.zeros([Yarr.size, deg*2])
 
 	for i in np.arange(deg):
-		X_vec[:,2*i] = np.cos(constant*i*Xarr)
-		X_vec[:,2*i+1] = np.sin(constant*i*Xarr)
+		X_vec[:,2*i]   = np.cos( (constant*i)*Xarr )
+		X_vec[:,2*i+1] = np.sin( (constant*i)*Xarr )
 
 	X_vec = np.delete(X_vec, 1, axis = 1)
 
 	A_vec = np.linalg.inv( np.transpose(X_vec) @ X_vec ) @ np.transpose(X_vec) @ Yarr
 	return (X_vec @ A_vec)
 
+def av_rel_error(Yarr: np.ndarray, Approxarr: np.ndarray):
+	"""
+	Calculates the average of absolute values of relative errors between 'Yarr'
+	and 'Approxarr'
+	
+	Parameters
+	----------
+	Yarr: np.ndarray
+		the original dataset
+	Approxarr: np.ndarray
+		set of data calculated using approximation. 
+		The two datasets must be of the same size.
+		
+	Returns
+	-------
+	Average relative error between the two datasets"""
+	sum = float(0)
+
+	for i, val in np.ndenumerate(Approxarr):
+		epsilon = np.abs( (val - Yarr[i]) / val )
+		sum = sum + epsilon
+
+	return sum/Yarr.size
+
+def av_abs_error(Yarr: np.ndarray, Approxarr: np.ndarray):
+	"""
+	Calculates the average of absolute values of absolute errors between 'Yarr'
+	and 'Approxarr'
+	
+	Parameters
+	----------
+	Yarr: np.ndarray
+		the original dataset
+	Approxarr: np.ndarray
+		set of data calculated using approximation. 
+		The two datasets must be of the same size.
+		
+	Returns
+	-------
+	Average absolute error between the two datasets"""
+	sum = float(0)
+
+	for i, val in np.ndenumerate(Approxarr):
+		delta = np.abs( (val - Yarr[i]) )
+		sum = sum + delta
+
+	return sum/Yarr.size
+
+def rmse(Yarr: np.ndarray, Approxarr: np.ndarray):
+	"""
+	Calculates the root mean square error
+	
+	Parameters
+	----------
+	Yarr: np.ndarray
+		the original dataset
+	Approxarr: np.ndarray
+		set of data calculated using approximation. 
+		The two datasets must be of the same size.
+		
+	Returns
+	-------
+	The value of rmse between the two datasets"""
+	sum = float(0)
+
+	for i, val in np.ndenumerate(Approxarr):
+		sum = sum + np.power( (val - Yarr[i]), 2 )
+
+	return np.sqrt(sum/Yarr.size)
