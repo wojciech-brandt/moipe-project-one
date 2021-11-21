@@ -130,3 +130,9 @@ dmypy.json
 
 # Ignore exe files
 *.exe
+
+# Ignore csv files
+*.csv
+
+# Ignore txt files
+*.txt
