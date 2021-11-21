@@ -1,4 +1,5 @@
 import numpy as np
+import custom_statistics as stat
 
 def polynomial_approximation(
 	Xarr: np.ndarray, 
@@ -200,3 +201,30 @@ def rmse(Yarr: np.ndarray, Approxarr: np.ndarray):
 		sum = sum + np.power( (val - Yarr[i]), 2 )
 
 	return np.sqrt(sum/Yarr.size)
+
+def determination_coeff(Yarr: np.ndarray, Approxarr: np.ndarray):
+	"""
+	Calculates the determination coefficient
+	
+	Parameters
+	----------
+	Yarr: np.ndarray
+		the original dataset
+	Approxarr: np.ndarray
+		set of data calculated using approximation. 
+		The two datasets must be of the same size.
+
+	Returns
+	-------
+	The value of the calculated coefficient of determination between the
+	two datasets.
+	"""
+	upper_sum = float(0)
+	lower_sum = float(0)
+	yarr_average = stat.arr_average(Yarr)
+
+	for i, val in np.ndenumerate(Yarr):
+		upper_sum = upper_sum + (Approxarr[i] - val)**2
+		lower_sum = lower_sum + (val - yarr_average)**2
+
+	return 1 - (upper_sum/lower_sum)
