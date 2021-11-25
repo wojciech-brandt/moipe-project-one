@@ -5,7 +5,7 @@ def polynomial_approximation(
 	Xarr: np.ndarray, 
 	Yarr: np.ndarray,
 	deg: np.int8
-) -> np.ndarray:
+) -> np.array:
 	"""
 	Calculate a vector of values that approximate the corresponding 'Yarr' values
 	using a polynomial function.
@@ -30,13 +30,13 @@ def polynomial_approximation(
 		X_vec[:, i] = Xarr**i
 
 	A_vec = np.linalg.inv( np.transpose(X_vec) @ X_vec ) @ np.transpose(X_vec) @ Yarr
-	return (X_vec @ A_vec)
+	return np.array([X_vec @ A_vec, A_vec], dtype=object)  
 
 def natlog_approximation(
 	Xarr: np.ndarray,
 	Yarr: np.ndarray,
 	deg: np.int8
-) -> np.ndarray:
+) -> np.array:
 	"""
 	Calculate a vector of values that approximate the corresponding 'Yarr' values
 	using a natural logarythm function.
@@ -61,13 +61,13 @@ def natlog_approximation(
 		X_vec[:, i] = np.log(Xarr)**i
 
 	A_vec = np.linalg.inv( np.transpose(X_vec) @ X_vec ) @ np.transpose(X_vec) @ Yarr
-	return (X_vec @ A_vec)
+	return np.array([X_vec @ A_vec, A_vec], dtype=object)  
 
 def rational_approximation(
 	Xarr: np.ndarray,
 	Yarr: np.ndarray,
 	deg: np.int8
-) -> np.ndarray:
+) -> np.array:
 	"""
 	Calculate a vector of values that approximate the corresponding 'Yarr' values
 	using a rational function.
@@ -92,14 +92,14 @@ def rational_approximation(
 		X_vec[:, i] = np.reciprocal(Xarr)**i
 
 	A_vec = np.linalg.inv( np.transpose(X_vec) @ X_vec ) @ np.transpose(X_vec) @ Yarr
-	return (X_vec @ A_vec)
+	return np.array([X_vec @ A_vec, A_vec], dtype=object)  
 
 def trig_approximation(
 	Xarr: np.ndarray,
 	Yarr: np.ndarray,
 	deg: np.int8,
 	constant = np.pi
-) -> np.ndarray:
+) -> np.array:
 	"""
 	Calculate a vector of values that approximate the corresponding 'Yarr' values
 	using trig functions.
@@ -130,7 +130,7 @@ def trig_approximation(
 	X_vec = np.delete(X_vec, 1, axis = 1)
 
 	A_vec = np.linalg.inv( np.transpose(X_vec) @ X_vec ) @ np.transpose(X_vec) @ Yarr
-	return (X_vec @ A_vec)
+	return np.array([X_vec @ A_vec, A_vec], dtype=object)  
 
 def av_rel_error(Yarr: np.ndarray, Approxarr: np.ndarray):
 	"""
