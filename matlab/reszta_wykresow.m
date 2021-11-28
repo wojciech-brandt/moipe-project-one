@@ -9,10 +9,10 @@ f1 = figure('Name', "U na X", figOpt{:});
 plot(data(1,:), data(3,:), 'r*')
 grid;
 xlabel("czas [s]");
-ylabel("napięcie [V]");
+ylabel("temperatura [°C]");
 
 f2 = figure('Name', 'U na T', figOpt{:});
 plot(data(2,:), data(3,:), 'r*');
 grid;
 xlabel("zmienna standaryzowana");
-ylabel("napięcie [V]");
+ylabel("temperatura [°C]");

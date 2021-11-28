@@ -14,7 +14,7 @@ plot(axes(2,:), data(2,:), 'b-')
 plot(axes(2,:), data(3,:), 'Color', '#77AC30', 'LineStyle', '-')
 grid;
 xlabel("zmienna standaryzowana");
-ylabel("napięcie [V]");
+ylabel("temperatura [°C]");
 
 f3 = figure('Name', 'wymierna', figOpt{:});
 plot(axes(2,:), axes(3,:), 'r*')
@@ -22,7 +22,7 @@ hold on
 plot(axes(2,:), data(5,:), 'b-')
 grid;
 xlabel("zmienna standaryzowana");
-ylabel("napięcie [V]");
+ylabel("temperatura [°C]");
 
 f4 = figure('Name', 'trigi', figOpt{:});
 plot(axes(2,:), axes(3,:), 'r*')
@@ -30,4 +30,4 @@ hold on
 plot(axes(2,:), data(4,:), 'b-')
 grid;
 xlabel("zmienna standaryzowana");
-ylabel("napięcie [V]");
+ylabel("temperatura [°C]");

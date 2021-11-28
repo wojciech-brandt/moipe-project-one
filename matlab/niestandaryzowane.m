@@ -13,29 +13,29 @@ plot(axes(1,:), data(1,:), 'k-')
 plot(axes(1,:), data(2,:), 'b-')
 plot(axes(1,:), data(3,:), 'Color', '#77AC30', 'LineStyle', '-')
 grid;
-xlabel("czas [s]");
-ylabel("napięcie [V]");
+xlabel("czas [dni]");
+ylabel("temperatura [°C]");
 
 f2 = figure('Name', 'logarytm', figOpt{:});
 plot(axes(1,:), axes(3,:), 'r*')
 hold on
 plot(axes(1,:), data(5,:), 'b-')
 grid;
-xlabel("czas [s]");
-ylabel("napięcie [V]");
+xlabel("czas [dni]");
+ylabel("temperatura [°C]");
 
 f3 = figure('Name', 'wymierna', figOpt{:});
 plot(axes(1,:), axes(3,:), 'r*')
 hold on
 plot(axes(1,:), data(6,:), 'b-')
 grid;
-xlabel("czas [s]");
-ylabel("napięcie [V]");
+xlabel("czas [dni]");
+ylabel("temperatura [°C]");
 
 f4 = figure('Name', 'trigi', figOpt{:});
 plot(axes(1,:), axes(3,:), 'r*')
 hold on
 plot(axes(1,:), data(4,:), 'b-')
 grid;
-xlabel("czas [s]");
-ylabel("napięcie [V]");
+xlabel("czas [dni]");
+ylabel("temperatura [°C]");

@@ -1,13 +1,13 @@
 preliminary = dict(
 	FILE_NAME = "preliminary.csv",
 	EXAMINED_POINT = 170,
-	REPETITIONS = 50
+	REPETITIONS = 30
 )
 
 main = dict(
 	FILE_NAME = "main.csv",
 	START_POINT = 1,
-	END_POINT = 360,
+	END_POINT = 365,
 	NO_POINTS = 20
 )
 
