@@ -1,0 +1,55 @@
+clc
+clear
+
+axes = readmatrix("main_for_matlab");
+zag_axes = readmatrix("N_main_for_matlab");
+data = readmatrix("nonstandarised.csv");
+zag_data = readmatrix("N_nonstandarised.csv");
+
+zag_wekt_nstand = linspace(axes(1,1), axes(1,end), 200);
+
+figOpt = {'Position', [300, 300, 800, 500], 'DefaultAxesFontSize', 13};
+
+logar = @(x) 11.888 + 286.226.*log(x) - 267.589.*(log(x).^2) + 91.286.*(log(x).^3) - 13.427.*(log(x).^4) + 0.719.*(log(x).^5);
+
+c = 0.003*pi;
+tryg_a = @(x) 15.982 - 0.226.*cos(c.*x) + 0.579.*sin(c.*x) - 3.923.*cos(c.*2.*x) + 4.541.*(c.*2.*x)
+
+zag_logar = logar(zag_wekt_nstand);
+zag_tryg = tryg_a(zag_wekt_nstand);
+
+f1 = figure('Name', "wielomiany", figOpt{:});
+plot(axes(1,:), axes(3,:), 'r*')
+hold on
+plot(axes(1,:), data(1,:), 'k-')
+plot(axes(1,:), data(2,:), 'b-')
+plot(axes(1,:), data(3,:), 'Color', '#77AC30', 'LineStyle', '-')
+grid;
+xlabel("czas [dni]");
+ylabel("temperatura [°C]");
+
+f2 = figure('Name', 'logarytm', figOpt{:});
+plot(axes(1,:), axes(3,:), 'r*')
+hold on
+plot(axes(1,:), data(5,:), 'b-')
+plot(zag_wekt_nstand, zag_logar);
+grid;
+xlabel("czas [dni]");
+ylabel("temperatura [°C]");
+
+f3 = figure('Name', 'wymierna', figOpt{:});
+plot(axes(1,:), axes(3,:), 'r*')
+hold on
+plot(axes(1,:), data(6,:), 'b-')
+grid;
+xlabel("czas [dni]");
+ylabel("temperatura [°C]");
+
+f4 = figure('Name', 'trigi', figOpt{:});
+plot(axes(1,:), axes(3,:), 'r*')
+hold on
+plot(axes(1,:), data(4,:), 'b-')
+plot(zag_wekt_nstand, zag_tryg);
+grid;
+xlabel("czas [dni]");
+ylabel("temperatura [°C]");

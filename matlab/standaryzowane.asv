@@ -1,19 +1,21 @@
 clc
 clear
 
-axes = readmatrix("main_for_matlab.csv");
-zag_axes = readmatrix("N_main_for_matlab.csv");
+axes = readmatrix("main_for_matlab");
 data = readmatrix("standarised.csv");
-zag_data = readmatrix("N_standarised.csv");
+
+wymierne = @(x) 14.022 - 1.764.*(1./x) + 0.213.*((1./x).^2) + 0.041.*((1./x).^3) - 5.349e-4.*((1./x).^4) - 9.925e-5.*((1./x)^5);
+zag_wym = wymierne(axes(2,:));
+
 
 figOpt = {'Position', [300, 300, 800, 500], 'DefaultAxesFontSize', 13};
 
 f1 = figure('Name', "wielomiany", figOpt{:});
 plot(axes(2,:), axes(3,:), 'r*')
 hold on
-plot(zag_axes(2,:), zag_data(1,:), 'k-')
-plot(zag_axes(2,:), zag_data(2,:), 'b-')
-plot(zag_axes(2,:), zag_data(3,:), 'Color', '#77AC30', 'LineStyle', '-')
+plot(axes(2,:), data(1,:), 'k-')
+plot(axes(2,:), data(2,:), 'b-')
+plot(axes(2,:), data(3,:), 'Color', '#77AC30', 'LineStyle', '-')
 grid;
 xlabel("zmienna standaryzowana");
 ylabel("temperatura [°C]");
@@ -21,7 +23,7 @@ ylabel("temperatura [°C]");
 f3 = figure('Name', 'wymierna', figOpt{:});
 plot(axes(2,:), axes(3,:), 'r*')
 hold on
-plot(zag_axes(2,:), zag_data(5,:), 'b-')
+plot(axes(2,:), data(5,:), 'b-')
 grid;
 xlabel("zmienna standaryzowana");
 ylabel("temperatura [°C]");
@@ -29,7 +31,8 @@ ylabel("temperatura [°C]");
 f4 = figure('Name', 'trigi', figOpt{:});
 plot(axes(2,:), axes(3,:), 'r*')
 hold on
-plot(zag_axes(2,:), zag_data(4,:), 'b-')
+plot(axes(2,:), data(4,:), 'b-')
+plot(axes
 grid;
 xlabel("zmienna standaryzowana");
 ylabel("temperatura [°C]");

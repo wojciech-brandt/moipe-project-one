@@ -121,13 +121,13 @@
 					\hline
 					Lp. & Temp [°C] & Lp. & Temp [°C] & Lp. & Temp [°C] & Lp. & Temp [°C] & Lp. & Temp [°C]\\ \hline \hline
 					1 & 21.3278 & 7 & 21.4407 & 13 & 21.5572 & 19 & 21.6734 & 25 & 21.8294 \\ \hline
-					2 & 21.5581 & 8 & 21.5981 & 14 & 21.6125 & 20 & 21.6867 & 26 & 21.7179 \\ \hline
-					3 & 21.6436 & 9 & 21.4865 & 15 & 21.7721 & 21 & 21.5976 & 27 & 21.4053 \\ \hline
-					4 & 21.7363 & 10 & 21.3967 & 16 & 21.5016 & 22 & 21.8381 & 28 & 21.5411 \\ \hline
+					2 & 21.5581 & 8 & 21.598 & 14 & 21.6125 & 20 & 21.6867 & 26 & 21.7179 \\ \hline
+					3 & 21.6436 & 9 & 21.4865 & 15 & 21.772 & 21 & 21.5976 & 27 & 21.4053 \\ \hline
+					4 & 21.7363 & 10 & 21.3967 & 16 & 21.5016 & 22 & 21.838 & 28 & 21.5411 \\ \hline
 					5 & 21.7832 & 11 & 21.4783 & 17 & 21.5292 & 23 & 21.6015 & 29 & 21.6239 \\ \hline
-					6 & 21.6631 & 12 & 21.7504 & 18 & 21.6604 & 24 & 21.4649 & 30 & 21.6096 \\ \hline
+					6 & 21.663 & 12 & 21.7504 & 18 & 21.6604 & 24 & 21.4649 & 30 & 21.6096 \\ \hline
 				\end{tabular}
-				\caption{Dane otrzymane przy wielokrotnym mierzeniu w punkcie 170}
+				\caption{Dane otrzymane przy wielokrotnym mierzeniu w punkcie 170, sortowane rosnąco}
 				\label{tab:stat}
 			\end{table}
 
@@ -142,33 +142,34 @@
 			Na podstawie danych z tab.~\ref{tab:stat} możemy wyznaczyć ważne wyznaczniki statystyczne
 			dotyczące podmiotu badań.
 
-			\begin{description}
-				\item[Ilość powtórzeń] wynosi 30.
-				\item[Średnia] wyznaczona na podstawie wzoru:
-					$$ \bar{x} = \frac{1}{n} \sum_{i=1}^n x_i =  21.6028 \text{ °C}$$
-			\end{description}
+			\paragraph{Ilość powtórzeń} wynosi 30.
+			\paragraph{Średnia} wyznaczona na podstawie wzoru:
+				$$ \bar{x} = \frac{1}{n} \sum_{i=1}^n x_i =  21.6028 \text{ °C}$$
+			\paragraph{Wartość minimalna} $x_{min} = 21.3278 \text{ °C}$
+			\paragraph{Wartość maksymalna} $x_{max} = 21.8380 \text{ °C}$ 
+			\paragraph{Mediana} wynosi $21.5015 \text{ °C}$
+			\paragraph{Wariancja} wyznaczona na podstawie wzoru:
+			$$ s^2 = \frac{1}{n - 1} \sum_{i=1}^n (y_i - \bar{y})^2 = 0.01713$$
 
-			\begin{description}
-				\item[Wartość minimalna] $x_{min} = 21.3278 \text{ °C}$
-				\item[Wartość maksymalna] $x_{max} = 21.8380 \text{ °C}$ 
-				\item[Mediana] wynosi $21.5015 \text{ °C}$
-				\item[Wariancja] wyznaczona na podstawie wzoru:
-					$$ s^2 = \frac{1}{n - 1} \sum_{i=1}^n (y_i - \bar{y})^2 = 0.01713$$
-				\item[Odchylenie standardowe] wyznaczone na podstawie wzoru:
-					$$ s = \sqrt{\frac{1}{n - 1} \sum_{i=1}^n (y_i - \bar{y})^2} = 0.13089$$
+			\paragraph{Odchylenie standardowe} wyznaczone na podstawie wzoru:
+			$$ s = \sqrt{\frac{1}{n - 1} \sum_{i=1}^n (y_i - \bar{y})^2} = 0.13089$$
+
+			\clearpage
 			\newpage
-				\item[Histogram]:
-					\begin{figure}[h]
-						\begin{center}
-							\includegraphics[width = 0.7\textwidth]{graphs/hist.jpg}
-							\caption{Histogram oparty o dane z tab.~\ref{fig:stat}}
-							\label{fig:hist}
-						\end{center}
-					\end{figure}
-			\end{description}
 
-			Aby dodatkowo sprawdzić rozkład pomiarów pod względem rozkładu, utworzono próbę zawierającą 
+			\paragraph{Histogram} wyznaczony na podstawie tab.~\ref{tab:stat}: 
+
+			\begin{figure}[h]
+				\begin{center}
+					\includegraphics[width = 0.7\textwidth]{graphs/hist.jpg}
+					\caption{Histogram oparty o dane z tab.~\ref{fig:stat}}
+					\label{fig:hist}
+				\end{center}
+			\end{figure}
+
+			Aby dodatkowo sprawdzić rozkład pomiarów pod względem, utworzono próbę zawierającą 
 			100 powtórzeń:
+
 			\begin{figure}[h]
 				\begin{center}
 					\includegraphics[width = 0.7\textwidth]{graphs/histfit.jpg}
@@ -319,7 +320,7 @@
 					\end{bmatrix}$$
 
 					Funkcja aproksymująca:
-					$$ Q(x) = 20.692 - -13.7x -21.28x^2 + 24.59x^3 + 18.154x^4 - 15.044x^5 -5.744x^6 + 4.180x^7 $$
+					$$ Q(x) = 20.692 -13.7x -21.28x^2 + 24.59x^3 + 18.154x^4 - 15.044x^5 -5.744x^6 + 4.180x^7 $$
 
 					\newpage
 				\paragraph{Otrzymane funkcje} prezentują się w następujący sposób:
@@ -610,7 +611,7 @@
 
 		\begin{figure}[h]
 			\begin{center}
-				\includegraphics[width = 0.74\textwidth]{graphs/7.jpg}	
+				\includegraphics[width = 0.7\textwidth]{graphs/7.jpg}	
 				\caption{Prezentacja działania modeli na dłuższym przedziale czasowym}
 				\label{fig:7}
 			\end{center}
